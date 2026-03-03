@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section id="hero-section" className="relative -mt-24 h-[100svh] overflow-hidden border-b border-[#013d23]/15">
+    <section id="hero-section" className="relative -mt-24 h-[100svh] overflow-hidden border-b border-[#013d23]/10">
       <video
         className="absolute inset-0 h-auto min-h-full w-full object-cover md:h-full"
         autoPlay
@@ -22,15 +22,13 @@ export function Hero() {
 
       <div className="absolute inset-0 bg-[linear-gradient(128deg,rgba(1,61,35,0.45)_0%,rgba(1,61,35,0.30)_45%,rgba(1,61,35,0.50)_100%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(95deg,rgba(0,0,0,0.22)_0%,rgba(0,0,0,0.08)_48%,rgba(0,0,0,0)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_32%,rgba(213,216,142,0.10),rgba(1,61,35,0)_42%)]" />
-
       <div className="relative mx-auto flex h-full w-[94vw] max-w-[1440px] items-center px-4 sm:px-6">
-        <div className="w-full max-w-6xl space-y-8 sm:space-y-9">
+        <div className="w-full max-w-6xl space-y-8">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-[11ch] text-left text-[2.55rem] font-extrabold leading-[1.04] tracking-[-0.034em] text-white drop-shadow-[0_14px_26px_rgba(0,0,0,0.35)] sm:text-[4.1rem] sm:leading-[1.01] md:text-[5.3rem] lg:text-[6.05rem]"
+            className="max-w-[11ch] text-left text-[2.55rem] font-extrabold leading-[1.04] tracking-tight text-white drop-shadow-[0_14px_26px_rgba(0,0,0,0.35)] sm:text-[4.1rem] sm:leading-[1.01] md:text-[5.3rem] lg:text-[6.05rem]"
           >
             <span className="block">Engenharia aplicada</span>
             <span className="mt-2 block sm:mt-3">e estratégia</span>
@@ -40,7 +38,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="max-w-[40rem] text-left text-base leading-relaxed text-white/90 md:text-[1.28rem] md:leading-[1.58]"
+            className="max-w-2xl text-left text-lg leading-relaxed text-white/90 md:text-xl"
           >
             Soluções integradas de inspeção, projeto e diagnóstico para potencializar o seu negócio. A excelência da
             engenharia brasileira aliada ao rigor técnico global.

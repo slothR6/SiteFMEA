@@ -7,7 +7,7 @@ import { serviceCards } from "@/lib/services-data";
 
 export function Services() {
   return (
-    <section className="bg-[#f5f8f6] py-20">
+    <section className="home-section bg-[#f5f8f6]">
       <div className="container space-y-10">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <div className="space-y-3">
@@ -23,7 +23,7 @@ export function Services() {
 
           <article className="relative aspect-[20/13] overflow-hidden rounded-2xl border border-[#013d23]/10 bg-white">
             <Image
-              src="/images/tecnicosimg.jpg" 
+              src="/images/tecnicosimg.jpg"
               alt="Engenheira em ambiente industrial com checklist técnico de inspeção"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
@@ -67,10 +67,7 @@ export function Services() {
         </div>
 
         <div>
-          <Link
-            href="/servicos"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#013d23] transition hover:text-[#013d23]/75"
-          >
+          <Link href="/servicos" className="home-primary-cta">
             Ver portfólio completo de serviços
             <ArrowRight className="h-4 w-4" />
           </Link>

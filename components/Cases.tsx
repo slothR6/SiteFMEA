@@ -12,20 +12,20 @@ export function Cases() {
   const featuredCases = caseStudies.slice(0, 3);
 
   return (
-    <section className="bg-[#edf3ef] py-20">
-      <div className="container space-y-10">
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-          <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#013d23]/60">Cases estratégicos</p>
-            <h2 className="max-w-3xl text-3xl font-semibold text-[#013d23] md:text-4xl">
+    <section className="home-section bg-[#edf3ef]">
+      <div className="container space-y-12">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
+          <div className="home-panel flex h-full flex-col justify-center">
+            <p className="home-eyebrow">Cases estratégicos</p>
+            <h2 className="home-section-title max-w-3xl">
               Projetos com foco em risco técnico, previsibilidade operacional e resultado mensurável.
             </h2>
-            <p className="max-w-2xl text-sm leading-relaxed text-[#013d23]/75 md:text-base">
+            <p className="home-section-subtitle">
               Casos organizados por tipo de atuação para facilitar leitura executiva de desafio, abordagem e resultado.
             </p>
           </div>
 
-          <article className="relative aspect-[20/13] overflow-hidden rounded-2xl border border-[#013d23]/12 bg-white">
+          <article className="relative aspect-[20/13] overflow-hidden rounded-2xl border border-[#013d23]/12 bg-white shadow-sm">
             <Image
               src="/images/wind-farm-landscape.jpg"
               alt="Infraestrutura industrial monitorada para ganho de confiabilidade operacional"
@@ -39,17 +39,19 @@ export function Cases() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {featuredCases.map((item) => (
-            <article key={item.slug} className="rounded-2xl border border-[#013d23]/12 bg-white p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#013d23]/60">{typeLabelMap[item.type]}</p>
-              <h3 className="mt-3 text-xl font-semibold text-[#013d23]">{item.title}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-[#013d23]/78">{item.result}</p>
-              <span className="mt-5 block h-[2px] w-14 bg-[#d5d88e]" />
+            <article
+              key={item.slug}
+              className="home-card transition duration-300 hover:-translate-y-1 hover:border-[#d5d88e] hover:shadow-[0_16px_40px_-35px_rgba(1,61,35,0.95)]"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#013d23]/70">{typeLabelMap[item.type]}</p>
+              <h3 className="mt-3 text-xl font-semibold text-neutral-900">{item.title}</h3>
+              <p className="home-card-copy">{item.result}</p>
             </article>
           ))}
         </div>
 
         <div>
-          <Link href="/cases" className="text-sm font-semibold text-[#013d23] transition hover:text-[#013d23]/75">
+          <Link href="/cases" className="home-primary-cta">
             Ver página completa de cases
           </Link>
         </div>

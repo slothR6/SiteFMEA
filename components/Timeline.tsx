@@ -137,7 +137,7 @@ export function Timeline() {
   };
 
   return (
-    <section ref={sectionRef} className="relative isolate overflow-hidden bg-[#edf3ef] py-20 md:py-24">
+    <section ref={sectionRef} className="home-section relative isolate overflow-hidden bg-[#edf3ef]">
       <div className="pointer-events-none absolute inset-0">
         <div className="relative h-full w-full overflow-hidden">
           <Image
@@ -145,12 +145,12 @@ export function Timeline() {
             alt=""
             fill
             sizes="100vw"
-            className="object-cover object-center opacity-[0.18]"
+            className="object-cover object-center opacity-[0.12]"
             aria-hidden="true"
           />
         </div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(213,216,142,0.3),transparent_42%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(158deg,rgba(242,247,243,0.92)_0%,rgba(242,247,243,0.96)_42%,rgba(242,247,243,0.98)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(213,216,142,0.22),transparent_42%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(158deg,rgba(242,247,243,0.95)_0%,rgba(242,247,243,0.97)_42%,rgba(242,247,243,0.99)_100%)]" />
       </div>
 
       <div className="container relative space-y-10">
@@ -164,14 +164,14 @@ export function Timeline() {
           </p>
         </header>
 
-        <div className="rounded-3xl border border-[#013d23]/14 bg-white/85 p-4 shadow-[0_22px_40px_-36px_rgba(1,61,35,0.8)] backdrop-blur-[2px] sm:p-5 md:p-8">
+        <div className="rounded-2xl border border-[#013d23]/12 bg-white/90 p-6 shadow-sm md:p-8">
           <div className="relative mx-auto w-full md:min-w-[720px]">
             {isMobileLayout ? (
               <>
                 <div className="absolute bottom-[22px] left-[20px] top-[22px] w-[5px] rounded-full bg-[#013d23]/12" />
                 <div className="absolute bottom-[22px] left-[20px] top-[22px] w-[5px] rounded-full bg-gradient-to-b from-[#013d23]/35 via-[#2f7a57]/30 to-[#d5d88e]/30" />
                 <motion.div
-                  className="absolute bottom-[22px] left-[20px] top-[22px] w-[5px] rounded-full bg-gradient-to-b from-[#009f68] via-[#00c97d] to-[#00ffb3] shadow-[0_0_18px_rgba(0,201,125,0.45)]"
+                  className="absolute bottom-[22px] left-[20px] top-[22px] w-[5px] rounded-full bg-gradient-to-b from-[#013d23] via-[#2f7a57] to-[#d5d88e]"
                   initial={false}
                   style={{ scaleY: progressScaleY, transformOrigin: "center top" }}
                 />
@@ -181,7 +181,7 @@ export function Timeline() {
                 <div className="absolute left-0 right-0 top-[18px] h-[5px] rounded-full bg-[#013d23]/12" />
                 <div className="absolute left-0 right-0 top-[18px] h-[5px] rounded-full bg-gradient-to-r from-[#013d23]/35 via-[#2f7a57]/30 to-[#d5d88e]/30" />
                 <motion.div
-                  className="absolute left-0 right-0 top-[18px] h-[5px] rounded-full bg-gradient-to-r from-[#009f68] via-[#00c97d] to-[#00ffb3] shadow-[0_0_18px_rgba(0,201,125,0.45)]"
+                  className="absolute left-0 right-0 top-[18px] h-[5px] rounded-full bg-gradient-to-r from-[#013d23] via-[#2f7a57] to-[#d5d88e]"
                   initial={false}
                   style={{ scaleX: progressScaleX, transformOrigin: "left center" }}
                 />
@@ -212,8 +212,8 @@ export function Timeline() {
                       <span
                         className={`relative grid h-9 w-9 place-items-center rounded-full border text-xs font-semibold transition duration-300 ${
                           active
-                            ? "border-[#d5d88e] bg-[#d5d88e] text-[#013d23]"
-                            : "border-[#013d23]/22 bg-white text-[#013d23]/70 group-hover:border-[#d5d88e]/75 group-hover:text-[#013d23]"
+                            ? "border-[#013d23] bg-[#013d23] text-white"
+                            : "border-[#013d23]/18 bg-white text-neutral-700 group-hover:border-[#013d23]/35 group-hover:text-neutral-900"
                         }`}
                       >
                         {index + 1}
@@ -222,7 +222,7 @@ export function Timeline() {
 
                     <span
                       className={`w-full text-sm font-semibold transition md:mt-4 md:w-auto ${
-                        active ? "text-[#013d23]" : "text-[#013d23]/58 group-hover:text-[#013d23]/84"
+                        active ? "text-neutral-900" : "text-neutral-700 group-hover:text-neutral-900"
                       }`}
                     >
                       {item.period}
@@ -241,16 +241,16 @@ export function Timeline() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -18 }}
             transition={{ duration: 0.55, ease: "easeInOut" }}
-            className="grid overflow-hidden rounded-3xl border border-[#013d23]/16 bg-white shadow-[0_24px_50px_-42px_rgba(1,61,35,0.9)] lg:grid-cols-[1.06fr_0.94fr]"
+            className="grid overflow-hidden rounded-2xl border border-[#013d23]/12 bg-white shadow-sm lg:grid-cols-[1.06fr_0.94fr]"
           >
-            <div className="space-y-5 p-4 sm:p-6 md:p-9">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#013d23]/60">{activeItem.period}</p>
-              <h3 className="text-2xl font-semibold leading-tight text-[#013d23] md:text-3xl">{activeItem.title}</h3>
-              <p className="w-full max-w-2xl text-sm leading-relaxed text-[#013d23]/82 md:text-base">{activeItem.description}</p>
+            <div className="space-y-5 p-6 md:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#013d23]/70">{activeItem.period}</p>
+              <h3 className="text-2xl font-semibold leading-tight text-brand-primary md:text-3xl">{activeItem.title}</h3>
+              <p className="w-full max-w-2xl text-lg leading-relaxed text-neutral-700">{activeItem.description}</p>
 
               <div className="flex flex-wrap gap-2">
                 <p className="inline-flex rounded-full bg-[#d5d88e]/45 px-4 py-1 text-xs font-semibold text-[#013d23]">{activeItem.focus}</p>
-                <p className="inline-flex rounded-full border border-[#013d23]/14 bg-[#f4f7f5] px-4 py-1 text-xs font-semibold text-[#013d23]/82">
+                <p className="inline-flex rounded-full border border-[#013d23]/14 bg-[#f4f7f5] px-4 py-1 text-xs font-semibold text-neutral-700">
                   {activeItem.milestone}
                 </p>
               </div>
@@ -270,7 +270,7 @@ export function Timeline() {
                 sizes="(max-width: 1024px) 100vw, 38vw"
                 className={cn("object-cover object-center", activeItem.imageObjectPosition)}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#013d23]/78 via-[#013d23]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#013d23]/72 via-[#013d23]/20 to-transparent" />
             </motion.div>
           </motion.article>
         </AnimatePresence>

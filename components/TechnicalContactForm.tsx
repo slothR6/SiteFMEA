@@ -242,8 +242,8 @@ export function TechnicalContactForm({ className, submitLabel = "Enviar solicita
       noValidate
       onSubmit={handleSubmit}
       className={cn(
-        "space-y-4 rounded-2xl border border-[#013d23]/12 p-7 shadow-[0_20px_45px_-45px_rgba(1,61,35,0.75)] md:p-8",
-        surface === "white" ? "bg-white" : "bg-[#f7f9f8]",
+        "space-y-5 rounded-2xl border border-[#013d23]/12 p-6 shadow-sm md:p-8",
+        surface === "white" ? "bg-white" : "bg-neutral-50",
         className
       )}
     >
@@ -369,7 +369,7 @@ export function TechnicalContactForm({ className, submitLabel = "Enviar solicita
         </p>
       ) : null}
 
-      <Button type="submit" disabled={isSubmitting} className="w-full bg-[#013d23] text-white hover:bg-[#013d23]/90 disabled:cursor-not-allowed disabled:opacity-75">
+      <Button type="submit" disabled={isSubmitting} className="home-primary-cta h-auto w-full disabled:cursor-not-allowed disabled:opacity-75">
         {isSubmitting ? "Enviando..." : submitLabel}
       </Button>
     </form>

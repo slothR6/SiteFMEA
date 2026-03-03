@@ -68,20 +68,16 @@ const sectors: SectorCard[] = [
 
 export function BrazilCoverageMap() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#f8faf8] py-20">
+    <section className="home-section relative isolate overflow-hidden bg-[#f8faf8]">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-20 top-0 h-56 w-56 rounded-full bg-[#d5d88e]/20 blur-3xl" />
         <div className="absolute -right-12 bottom-8 h-52 w-52 rounded-full bg-[#013d23]/10 blur-3xl" />
       </div>
 
-      <div className="container relative space-y-10">
-        <div className="space-y-3">
-          <h2 className="max-w-3xl text-3xl font-semibold leading-tight text-[#013d23] md:text-4xl">
-            {"ATUAÇÃO NACIONAL CONSOLIDADA"}
-          </h2>
-          <p className="max-w-3xl text-sm leading-relaxed text-[#013d23]/75 md:text-base">
-            {"Consolidação técnica com presença nacional em múltiplos setores estratégicos."}
-          </p>
+      <div className="container relative space-y-12">
+        <div>
+          <h2 className="home-section-title max-w-3xl">{"ATUAÇÃO NACIONAL CONSOLIDADA"}</h2>
+          <p className="home-section-subtitle">{"Consolidação técnica com presença nacional em múltiplos setores estratégicos."}</p>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch">
@@ -90,10 +86,10 @@ export function BrazilCoverageMap() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.45 }}
-            className="flex h-full flex-col overflow-hidden rounded-3xl border border-[#013d23]/12 bg-white shadow-[0_24px_46px_-36px_rgba(1,61,35,0.62)]"
+            className="flex h-full flex-col overflow-hidden rounded-2xl border border-[#013d23]/12 bg-white shadow-sm"
           >
-            <div className="relative p-4 sm:p-6">
-              <div className="relative overflow-hidden rounded-2xl border border-[#013d23]/10 bg-[#f7faf8] p-3 sm:p-4">
+            <div className="relative p-6">
+              <div className="relative overflow-hidden rounded-2xl border border-[#013d23]/10 bg-[#f7faf8] p-4">
                 <svg
                   viewBox={brazilMapViewBox}
                   role="img"
@@ -119,7 +115,7 @@ export function BrazilCoverageMap() {
               </div>
             </div>
 
-            <div className="mt-auto border-t border-[#013d23]/10 bg-[linear-gradient(160deg,rgba(1,61,35,0.04)_0%,rgba(213,216,142,0.16)_100%)] px-4 py-4 sm:px-6 sm:py-5">
+            <div className="mt-auto border-t border-[#013d23]/10 bg-neutral-50 px-6 py-5">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
                   <span className="grid h-7 w-7 place-items-center rounded-full bg-[#013d23]/10 text-[#013d23]">
@@ -128,7 +124,7 @@ export function BrazilCoverageMap() {
                   <p className="text-sm font-semibold tracking-[0.03em] text-[#013d23]">Estados atendidos</p>
                 </div>
 
-                <span className="rounded-full border border-[#013d23]/15 bg-white/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#013d23]/70">
+                <span className="rounded-full border border-[#013d23]/15 bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-neutral-700">
                   {coveredStateChips.length} UF
                 </span>
               </div>
@@ -138,10 +134,10 @@ export function BrazilCoverageMap() {
                   <li key={state.id}>
                     <span
                       title={state.name}
-                      className="group inline-flex items-center gap-1.5 rounded-full border border-[#013d23]/14 bg-white/72 px-3.5 py-1.5 transition duration-300 hover:-translate-y-0.5 hover:border-[#2f7a57]/45 hover:bg-white hover:shadow-[0_12px_18px_-14px_rgba(1,61,35,0.82)]"
+                      className="group inline-flex items-center gap-1.5 rounded-full border border-[#013d23]/14 bg-white px-3.5 py-1.5 transition duration-300 hover:-translate-y-0.5 hover:border-[#2f7a57]/45"
                     >
-                      <MapPin className="h-3.5 w-3.5 text-[#2f7a57]/72 transition group-hover:text-[#2f7a57]" />
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#013d23]/88">{state.uf}</span>
+                      <MapPin className="h-3.5 w-3.5 text-[#2f7a57] transition group-hover:text-[#013d23]" />
+                      <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-primary">{state.uf}</span>
                     </span>
                   </li>
                 ))}
@@ -154,22 +150,20 @@ export function BrazilCoverageMap() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.35 }}
-            className="flex h-full flex-col rounded-3xl border border-[#013d23]/12 bg-white p-5 shadow-[0_24px_46px_-36px_rgba(1,61,35,0.62)] sm:p-6"
+            className="home-panel flex h-full flex-col border border-[#013d23]/12 shadow-sm"
           >
-            <div className="space-y-2">
-              <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-[#013d23]/68">
-                {"Setores de Atuação"}
-              </h3>
-              <p className="text-sm leading-relaxed text-[#013d23]/74">
+            <div>
+              <h3 className="home-eyebrow">{"Setores de Atuação"}</h3>
+              <p className="mt-4 text-base leading-relaxed text-neutral-700">
                 {"Segmentos com exigência técnica elevada e abordagem institucional orientada por evidências."}
               </p>
             </div>
 
-            <div className="mt-5 grid flex-1 auto-rows-max gap-4 sm:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2">
+            <div className="mt-6 grid flex-1 auto-rows-max gap-4 sm:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2">
               {sectors.map((sector) => (
                 <article
                   key={sector.name}
-                  className="group overflow-hidden rounded-2xl border border-[#013d23]/14 bg-white shadow-[0_14px_26px_-18px_rgba(1,61,35,0.62)] transition duration-300 hover:-translate-y-0.5 hover:border-[#1f6b46]/42 hover:shadow-[0_22px_34px_-20px_rgba(1,61,35,0.76)]"
+                  className="group overflow-hidden rounded-2xl border border-[#013d23]/12 bg-white shadow-sm transition duration-300 hover:-translate-y-0.5"
                 >
                   <div className="relative h-32 overflow-hidden sm:h-36">
                     <Image
@@ -179,13 +173,11 @@ export function BrazilCoverageMap() {
                       sizes="(max-width: 1024px) 100vw, 38vw"
                       className="object-cover object-center transition duration-700 ease-out group-hover:scale-[1.05]"
                     />
-                    <div className="absolute inset-0 bg-[linear-gradient(170deg,rgba(1,61,35,0.08)_0%,rgba(1,61,35,0.26)_100%)]" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#013d23]/24 to-transparent" />
                   </div>
 
-                  <div className="border-t border-[#0f6138]/85 bg-[#0b4d2f] px-4 py-2.5">
-                    <h4 className="text-center text-sm font-semibold uppercase tracking-[0.08em] text-white sm:text-[0.92rem]">
-                      {sector.name}
-                    </h4>
+                  <div className="px-4 py-4">
+                    <h4 className="text-base font-semibold text-brand-primary">{sector.name}</h4>
                   </div>
                 </article>
               ))}

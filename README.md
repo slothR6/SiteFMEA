@@ -1,4 +1,4 @@
-﻿# FMEA Engineering - Site institucional
+# FMEA Engineering - Site institucional
 
 Projeto institucional em Next.js (App Router) com formulario de contato tecnico protegido por Turnstile, persistencia em Firestore e envio de email via Resend.
 

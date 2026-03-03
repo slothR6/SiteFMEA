@@ -104,6 +104,51 @@
   .animate-surface-in {
     animation: surface-in 0.45s ease-out both;
   }
+
+  .home-section {
+    @apply py-24 md:py-28;
+  }
+
+  .home-eyebrow {
+    @apply text-xs font-semibold uppercase;
+    letter-spacing: 0.16em;
+    color: rgba(1, 61, 35, 0.72);
+  }
+
+.home-section-title {
+  @apply text-2xl md:text-3xl font-bold tracking-tight text-brand-primary;
+  }
+
+.home-section-subtitle {
+  @apply mt-6 max-w-2xl text-lg leading-relaxed;
+  color: rgba(1, 61, 35, 0.82);
+  }
+
+  .home-panel {
+    @apply rounded-2xl bg-neutral-50 p-6 md:p-8;
+  }
+
+  .home-card {
+    @apply rounded-2xl bg-white p-6 text-left shadow-sm md:p-8;
+    border: 1px solid rgba(1, 61, 35, 0.12);
+  }
+
+  .home-card-title {
+    @apply text-xl font-semibold text-neutral-900;
+  }
+
+  .home-card-copy {
+    @apply mt-3 text-base leading-relaxed text-neutral-700;
+  }
+
+  .home-primary-cta {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-base font-semibold text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+    background-color: #064e3b;
+  }
+
+  .home-primary-cta:hover {
+    background-color: #065f46;
+  }
 }
 
 @keyframes partner-marquee {
