@@ -2,37 +2,6 @@
 
 Projeto institucional em Next.js (App Router) com formulario de contato tecnico protegido por Turnstile, persistencia em Firestore e envio de email via Resend.
 
-## Stack
-
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
-- Cloudflare Turnstile
-- Firebase Firestore + Firebase Admin SDK
-- Resend
-
-## Como ajustar o tamanho da logo no cabeçalho
-
-Arquivo principal da logo:
-- `components/SiteLogo.tsx`
-
-Onde ela é usada no cabeçalho:
-- `components/SiteHeader.tsx` (componente `<SiteLogo />`)
-
-O tamanho atual é controlado principalmente por:
-- Classe do container da imagem em `SiteLogo.tsx`: `h-10 w-[120px]`
-- Propriedade `sizes` do `next/image`: `sizes="120px"` (deve acompanhar a largura definida)
-
-Como alterar sem quebrar layout:
-1. Ajuste `h-10` e `w-[120px]` no `<span className="relative ...">` de `SiteLogo.tsx`.
-2. Atualize `sizes` para o mesmo valor de largura (ex.: se usar `w-[140px]`, use `sizes="140px"`).
-3. Teste desktop e mobile para garantir que a barra do header continua com bom espaçamento lateral.
-
-Evite alterar:
-- `fill` no componente `Image` (ele depende do container com `position: relative`).
-- `className="shrink-0"` no uso da logo em `SiteHeader.tsx` (evita compressão em telas menores).
-- Estrutura do `Link` da logo (mantém área de clique e alinhamento consistentes).
-
 ## Como rodar localmente
 
 ```bash
