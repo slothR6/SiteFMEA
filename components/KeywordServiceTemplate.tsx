@@ -68,6 +68,32 @@ export function KeywordServiceTemplate({ page }: KeywordServiceTemplateProps) {
             </div>
           </section>
 
+          {page.gallery && page.gallery.length > 0 ? (
+            <section className="rounded-3xl border border-[#013d23]/16 bg-white p-6 md:p-8">
+              <SectionHeader eyebrow="Trabalhos realizados" title="Registros de campo" titleClassName="text-2xl md:text-3xl" />
+
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                {page.gallery.map((image) => (
+                  <figure
+                    key={image.src}
+                    className="overflow-hidden rounded-2xl border border-[#013d23]/14 bg-[#f8faf9]"
+                  >
+                    <div className="relative aspect-[3/4]">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                        className="object-cover object-center"
+                      />
+                    </div>
+                    <figcaption className="p-4 text-sm font-medium text-[#013d23]/84">{image.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
           <section className="rounded-3xl border border-[#013d23]/16 bg-white p-6 md:p-8">
             <SectionHeader
               eyebrow="Entregáveis"

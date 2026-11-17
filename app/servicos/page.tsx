@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { JsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
+import { SectorCards } from "@/components/SectorCards";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Tag } from "@/components/Tag";
 import { serviceCards, serviceCategories } from "@/lib/services-data";
@@ -40,6 +41,8 @@ export default function ServicosPage() {
 
       <main className="bg-[#f4f7f5] py-14 md:py-16">
         <div className="container space-y-10">
+          <SectorCards />
+
           <section className="overflow-hidden rounded-3xl border border-[#013d23]/18 bg-white shadow-[0_20px_44px_-30px_rgba(1,61,35,0.9)]">
             <div className="grid gap-0 lg:grid-cols-[1.08fr_0.92fr]">
               <div className="space-y-5 p-7 md:p-9">

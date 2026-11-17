@@ -6,11 +6,18 @@ export type KeywordServicePath =
   | "/pericia-tecnica"
   | "/inspecao-por-ultrassom"
   | "/caracterizacao-de-materiais"
-  | "/microscopia-eletronica-mev";
+  | "/microscopia-eletronica-mev"
+  | "/setores/portuario";
 
 type ServiceTopic = {
   title: string;
   items: string[];
+};
+
+type GalleryImage = {
+  src: string;
+  alt: string;
+  caption: string;
 };
 
 export type KeywordServicePage = {
@@ -25,6 +32,7 @@ export type KeywordServicePage = {
   heroImageAlt: string;
   scopeIntro: string;
   scopeTopics: ServiceTopic[];
+  gallery?: GalleryImage[];
   deliverablesTitle: string;
   deliverablesIntro: string;
   deliverables: string[];
@@ -574,6 +582,119 @@ export const keywordServicePages: Record<KeywordServicePath, KeywordServicePage>
       "caracterização de materiais",
       "análise de falha",
       "perícia técnica"
+    ]
+  },
+  "/setores/portuario": {
+    path: "/setores/portuario",
+    title: "Inspeção de guindastes e estruturas portuárias",
+    eyebrow: "Setor portuário",
+    intro:
+      "Atuamos diretamente em terminais portuários com inspeções técnicas orientadas por criticidade em guindastes de pórtico e móveis, incluindo equipamentos Konecranes e Liebherr.",
+    metaTitle: "Inspeção de Guindastes Portuários | FMEA Engineering",
+    metaDescription:
+      "Inspeção de trincas em lanças, cabos de aço, soldas e estruturas de guindastes portuários Konecranes e Liebherr, com ensaios não destrutivos e simulação estrutural.",
+    heroBadge: "Guindastes de pórtico e móveis",
+    heroImage: "/images/portos/lanca-guindaste.jpg",
+    heroImageAlt: "Lança de guindaste portuário durante inspeção estrutural",
+    scopeIntro:
+      "Nossa abordagem combina ensaios não destrutivos, análise de materiais e simulação estrutural para garantir a continuidade operacional e a segurança dos ativos portuários.",
+    scopeTopics: [
+      {
+        title: "Inspeção em guindastes",
+        items: [
+          "Inspeção de trincas em lança de guindastes Konecranes e Liebherr",
+          "Inspeção técnica em cabos de aço",
+          "Avaliação de integridade estrutural de lança e estrutura principal"
+        ]
+      },
+      {
+        title: "Ensaios não destrutivos",
+        items: [
+          "Análise completa com instrumentação de ultrassom",
+          "Líquido penetrante (LP)",
+          "Partículas magnéticas (PM)"
+        ]
+      },
+      {
+        title: "Análise e simulação",
+        items: ["Análise de materiais", "Análise fractográfica", "Mecânica da fratura", "Simulação estrutural"]
+      }
+    ],
+    gallery: [
+      {
+        src: "/images/portos/analise-trincas-lanca.jpg",
+        alt: "Análise de trincas em lança de guindaste portuário",
+        caption: "Análise de trincas em lança"
+      },
+      {
+        src: "/images/portos/inspecao-solda.jpg",
+        alt: "Inspeção técnica em soldas de estrutura portuária",
+        caption: "Inspeção em soldas"
+      },
+      {
+        src: "/images/portos/verificacao-trincas-roldanas.jpg",
+        alt: "Verificação de trincas em roldanas de guindaste",
+        caption: "Verificação de trincas em roldanas"
+      },
+      {
+        src: "/images/portos/lanca-guindaste.jpg",
+        alt: "Estrutura de lança de guindaste portuário",
+        caption: "Estrutura de lança"
+      }
+    ],
+    deliverablesTitle: "Saída técnica da inspeção portuária",
+    deliverablesIntro:
+      "Informe o modelo do guindaste, o histórico de operação e as condições do ativo. Nossa equipe elabora um plano de inspeção personalizado.",
+    deliverables: [
+      "Relatório de inspeção com registro fotográfico e localização das descontinuidades",
+      "Resultados de ensaios não destrutivos (ultrassom, LP e PM) com critérios de aceitação",
+      "Avaliação de integridade estrutural e criticidade das trincas encontradas",
+      "Recomendação de reparo, monitoramento ou restrição operacional"
+    ],
+    faq: [
+      {
+        question: "Quais guindastes portuários a FMEA inspeciona?",
+        answer:
+          "Guindastes de pórtico e guindastes móveis, incluindo equipamentos Konecranes e Liebherr, com foco em lança, estrutura principal, soldas, roldanas e cabos de aço."
+      },
+      {
+        question: "Quais ensaios são usados na inspeção de guindastes?",
+        answer:
+          "Ultrassom, líquido penetrante e partículas magnéticas, complementados por análise de materiais, fractografia, mecânica da fratura e simulação estrutural quando a trinca exige avaliação de criticidade."
+      },
+      {
+        question: "Trinca na lança significa parar o guindaste?",
+        answer:
+          "Nem sempre. A mecânica da fratura e a simulação estrutural permitem avaliar se a trinca é aceitável, se pode ser monitorada ou se exige reparo imediato, apoiando a decisão com base técnica."
+      }
+    ],
+    relatedLinks: [
+      {
+        href: "/inspecao-por-ultrassom",
+        title: "Inspeção por ultrassom para soldas e estruturas",
+        description: "Detecta descontinuidades internas e perda de espessura em componentes críticos do guindaste."
+      },
+      {
+        href: "/analise-de-falha-industrial",
+        title: "Análise de falha quando a trinca evoluiu para ruptura",
+        description: "Investiga a causa raiz de fraturas e falhas estruturais em equipamentos portuários."
+      },
+      {
+        href: "/inspecao-tecnica",
+        title: "Inspeção técnica orientada por criticidade",
+        description: "Organiza a inspeção do ativo por risco operacional e prioridade de intervenção."
+      }
+    ],
+    schemaName: "Inspeção de guindastes portuários",
+    schemaDescription:
+      "Inspeção técnica de guindastes de pórtico e móveis em terminais portuários, com ensaios não destrutivos, análise de materiais e simulação estrutural.",
+    serviceType: "Inspeção de guindastes portuários",
+    keywords: [
+      "inspeção de guindastes portuários",
+      "inspeção de trincas em lança",
+      "inspeção de cabos de aço",
+      "ensaios não destrutivos",
+      "setor portuário"
     ]
   }
 };

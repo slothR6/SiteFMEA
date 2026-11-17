@@ -28,10 +28,11 @@ export function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-[11ch] text-left text-[2.55rem] font-extrabold leading-[1.04] tracking-tight text-white drop-shadow-[0_14px_26px_rgba(0,0,0,0.35)] sm:text-[4.1rem] sm:leading-[1.01] md:text-[5.3rem] lg:text-[6.05rem]"
+            className="max-w-[11ch] text-left text-[2.55rem] font-extrabold leading-[1.04] tracking-tight text-white drop-shadow-[0_14px_26px_rgba(0,0,0,0.35)] sm:text-[4.1rem] sm:leading-[1.01] md:text-[4.6rem] lg:text-[5.2rem]"
           >
-            <span className="block">Engenharia aplicada</span>
-            <span className="mt-2 block sm:mt-3">e estratégia</span>
+            <span className="block">Engenharia</span>
+            <span className="mt-2 block sm:mt-3">orientada a</span>
+            <span className="mt-2 block sm:mt-3">resultados</span>
           </motion.h1>
 
           <motion.p
@@ -40,15 +41,16 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="max-w-2xl text-left text-lg leading-relaxed text-white/90 md:text-xl"
           >
-            Soluções integradas de inspeção, projeto e diagnóstico para potencializar o seu negócio. A excelência da
-            engenharia brasileira aliada ao rigor técnico global.
+            Soluções completas em Análise de Falhas, Inspeções Técnicas e Desenvolvimento de Projetos para os setores
+            eólico, solar, hídrico e portuário. Engenharia aplicada com foco em performance, mitigação de riscos e
+            maximização de resultados, combinando expertise nacional com padrões globais.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.2, ease: "easeOut" }}
-            className="pt-2"
+            className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap"
           >
             <Link
               href="/contato"
@@ -56,6 +58,19 @@ export function Hero() {
             >
               <span>Fale com um Especialista</span>
               <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[#013d23] shadow-[inset_0_0_0_1px_rgba(1,61,35,0.24)] transition-[background-color,color,transform] duration-[360ms] ease-in-out group-hover:bg-[#d5d88e]">
+                <ArrowRight
+                  aria-hidden="true"
+                  className="h-[18px] w-[18px] transition-transform duration-[360ms] ease-in-out group-hover:translate-x-[2px]"
+                  strokeWidth={2.2}
+                />
+              </span>
+            </Link>
+            <Link
+              href="/servicos"
+              className="group inline-flex w-full max-w-full items-center justify-between gap-4 rounded-[1rem] border border-white/45 bg-white/5 px-6 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-[transform,background-color,border-color] duration-[360ms] ease-in-out hover:-translate-y-[2px] hover:border-white/80 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d5d88e] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:w-auto sm:justify-center sm:px-7"
+            >
+              <span>Conheça nossos serviços</span>
+              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20 text-white transition-[background-color,transform] duration-[360ms] ease-in-out group-hover:bg-white/30">
                 <ArrowRight
                   aria-hidden="true"
                   className="h-[18px] w-[18px] transition-transform duration-[360ms] ease-in-out group-hover:translate-x-[2px]"
