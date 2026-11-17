@@ -1,69 +1,12 @@
-# FMEA Engineering - Site institucional
+# Site FMEA Engineering
 
-Projeto institucional em Next.js (App Router) com formulario de contato tecnico protegido por Turnstile, persistencia em Firestore e envio de email via Resend.
+Site estático (HTML/CSS/JS) hospedado na Vercel. Convertido do site PHP original da agência.
 
-## Como rodar localmente
+- Páginas: arquivos `.html` na raiz e nas pastas `servicos/`, `setores/`, `blog/`. A Vercel serve sem a extensão (`/contato`, `/servicos/inspecoes`).
+- Imagens, CSS e JS: `assets/`.
+- Formulário de contato: `api/contact.js` (função da Vercel, envia e-mail pelo Resend; variáveis RESEND_API_KEY, CONTACT_NOTIFY_TO, CONTACT_FROM_EMAIL).
+- Cabeçalho e rodapé estão repetidos em cada página (antes vinham de `includes/` do PHP). Para mudar o menu ou o rodapé, altere em todas as páginas.
 
-```bash
-npm install --legacy-peer-deps
-npm run dev
-```
+Qualquer alteração enviada para a branch `main` vai para o ar automaticamente. Pull requests geram um link de prévia.
 
-Acesse `http://localhost:3000`.
-
-## Setup do formulario de contato (Firestore + Resend)
-
-1. Crie um projeto no Firebase
-- Acesse o Firebase Console e crie um projeto.
-
-2. Ative o Firestore
-- No Firebase Console, habilite o Firestore Database para o projeto.
-
-3. Crie uma Service Account e configure env vars no Next.js
-- Em `Project settings > Service accounts`, gere/chame uma chave para o service account.
-- Nao commite JSON da chave no repositorio.
-- Configure as variaveis:
-
-```bash
-FIREBASE_PROJECT_ID=seu-project-id
-FIREBASE_CLIENT_EMAIL=firebase-adminsdk-xxxxx@seu-project-id.iam.gserviceaccount.com
-FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
-```
-
-4. Configure Resend e variaveis da aplicacao
-- Crie uma API key no painel da Resend.
-- Verifique o dominio de envio na Resend antes de ir para producao.
-- Configure as variaveis:
-
-```bash
-RESEND_API_KEY=re_xxxxxxxxx
-CONTACT_NOTIFY_TO=contato@empresa.com;suporte@empresa.com
-CONTACT_NOTIFY_CC=gestao@empresa.com
-CONTACT_FROM_EMAIL=FMEA <contato@fmea.net.br>
-NEXT_PUBLIC_SITE_URL=https://fmeaengineering.com.br
-TURNSTILE_SECRET_KEY=sua_chave_privada_turnstile
-NEXT_PUBLIC_TURNSTILE_SITE_KEY=sua_chave_publica_turnstile
-DEBUG_CONTACT=false
-```
-
-Observacoes:
-- `CONTACT_NOTIFY_TO` e obrigatoria.
-- `CONTACT_NOTIFY_TO` e `CONTACT_NOTIFY_CC` aceitam um email, lista separada por `,`/`;` ou JSON array.
-- Em producao, `CONTACT_FROM_EMAIL` e obrigatoria e deve usar dominio verificado na Resend.
-- Em desenvolvimento, se `CONTACT_FROM_EMAIL` estiver ausente, o backend usa fallback local e registra aviso no log.
-- Se `CONTACT_FROM_EMAIL` for informado com formato invalido, o endpoint retorna indisponivel em producao.
-- Se `RESEND_API_KEY` nao estiver configurada, o endpoint retorna indisponivel.
-- `NEXT_PUBLIC_SITE_URL` deve incluir protocolo (`https://`).
-- `DEBUG_CONTACT=true` habilita logs de diagnostico da rota `/api/contact`.
-
-5. Teste e monitoramento
-- A submissao e salva em `contactSubmissions`.
-- O email e enviado diretamente no backend para `CONTACT_NOTIFY_TO`.
-- Opcionalmente, o envio e auditado em `mailLogs`.
-
-## Build e producao
-
-```bash
-npm run build
-npm run start
-```
+A versão anterior em Next.js/TypeScript está preservada na branch `nextjs-versao-anterior`.
