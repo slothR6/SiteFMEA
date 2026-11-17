@@ -1,0 +1,48 @@
+{
+  "framework": null,
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/sobre",
+      "destination": "/responsabilidade-tecnica",
+      "permanent": true
+    },
+    {
+      "source": "/:path*.php",
+      "destination": "/:path*",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
+    }
+  ]
+}
