@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Inspeção Técnica em Energia | FMEA Engineering</title>
-  <meta name="description" content="Inspeção técnica, análise de falha e gestão de risco para ativos de energia renovável com foco em confiabilidade e disponibilidade." />
+  <title>Blog de Análise de Falha | FMEA Engineering</title>
+  <meta name="description" content="Artigos técnicos sobre análise de falha, inspeção técnica, perícia técnica e engenharia aplicada para ativos críticos." />
 
   
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:site_name"   content="FMEA Engineering" />
-  <meta property="og:title"       content="Inspeção Técnica em Energia | FMEA Engineering" />
-  <meta property="og:description" content="Inspeção técnica, análise de falha e gestão de risco para ativos de energia renovável com foco em confiabilidade e disponibilidade." />
+  <meta property="og:title"       content="Blog de Análise de Falha | FMEA Engineering" />
+  <meta property="og:description" content="Artigos técnicos sobre análise de falha, inspeção técnica, perícia técnica e engenharia aplicada para ativos críticos." />
   <meta property="og:image"       content="/assets/images/hero-energia.png" />
 
   <!-- Favicon -->
@@ -28,6 +28,7 @@
 
   <!-- CSS principal -->
   <link rel="stylesheet" href="/assets/css/main.css" />
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body data-page="blog">
 ﻿<header class="site-header" role="banner">
@@ -104,89 +105,35 @@
   </div><!-- /.header-inner -->
 </header>
 
-<!-- Hero do artigo -->
-<div class="blog-post-hero">
-  <img
-    src="/assets/images/hero-energia.png"
-    alt="Parque de geração de energia renovável monitorado por engenharia"
-    loading="eager"
-  />
-  <div class="img-overlay" aria-hidden="true"></div>
-</div>
-
-<main class="blog-post-main">
+<!-- Cabeçalho -->
+<section class="page-intro">
   <div class="container">
-    <article class="blog-post-card">
-
-      <!-- Meta do artigo -->
-      <div class="blog-post-meta">
-        <a href="/blog" style="font-size:0.8125rem;color:rgba(1,61,35,0.65);display:inline-flex;align-items:center;gap:0.375rem;">
-          ← Blog
-        </a>
-        <time class="blog-post-date" datetime="2026-02-15">15/02/2026</time>
-        <span class="blog-post-reading">6 min de leitura</span>
-      </div>
-
-      <!-- Tags -->
-      <div style="display:flex;flex-wrap:wrap;gap:0.375rem;margin-bottom:1.25rem;">
-        <span class="tag tag-default">Gestão de risco</span>
-        <span class="tag tag-default">Confiabilidade</span>
-        <span class="tag tag-default">Energia renovável</span>
-      </div>
-
-      <h1>Gestão de risco técnico em ativos de energia renovável</h1>
-
-      <p class="blog-post-excerpt">
-        Como integrar inspeção, análise de falhas e engenharia de projetos em um único ciclo decisório.
-      </p>
-
-      <!-- Conteúdo do artigo -->
-      <div class="blog-content">
-
-        <h2>Contexto</h2>
-        <p>
-          Operações de energia renovável exigem decisões rápidas, mas a velocidade só gera resultado quando
-          está apoiada por evidências técnicas confiáveis. Em cenários de alta exposição, uma
-          <a href="/servicos/inspecoes">inspeção técnica</a> bem estruturada encurta o
-          tempo entre sinal de degradação e a decisão correta.
-        </p>
-
-        <h2>Três frentes que precisam estar integradas</h2>
-        <ul>
-          <li>
-            <a href="/servicos/inspecoes">Inspeção técnica</a> para enxergar a condição
-            real dos ativos.
-          </li>
-          <li>
-            <a href="/servicos/analise-de-falhas">Análise de falha industrial</a> para
-            interromper recorrências e mapear causa raiz.
-          </li>
-          <li>
-            <a href="/servicos/desenvolvimento-de-projetos">Desenvolvimento de projeto</a>
-            para estruturar correções com viabilidade técnica.
-          </li>
-        </ul>
-
-        <h2>Resultado esperado</h2>
-        <p>
-          Quando essas frentes são tratadas como um único fluxo, a organização ganha previsibilidade de
-          manutenção, melhora disponibilidade e reduz risco de parada não programada. Em ativos sujeitos a
-          corrosão e perda de seção, complementar a rotina com inspeção por ultrassom ajuda a antecipar
-          intervenções antes da falha materializada.
-        </p>
-
-      </div><!-- /.blog-content -->
-
-      <!-- CTA -->
-      <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(1,61,35,0.10);">
-        <p style="font-size:0.9375rem;color:rgba(1,61,35,0.78);margin-bottom:1rem;">
-          Precisa de suporte técnico em ativos de energia?
-        </p>
-        <a href="/contato" class="btn-primary">Fale com um especialista</a>
-      </div>
-
-    </article>
+    <p class="eyebrow">Conteúdo técnico</p>
+    <h1>Blog institucional</h1>
+    <p>
+      Análises e referências técnicas para lideranças industriais com foco em risco,
+      confiabilidade e execução de engenharia.
+    </p>
   </div>
+</section>
+
+<main class="page-main">
+  <div class="container">
+
+    <div style="margin-bottom:2rem;" class="reveal">
+      <p class="eyebrow">Publicações</p>
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem);margin-top:0.5rem;">Artigos com leitura direta por tema</h2>
+      <p style="font-size:0.9375rem;color:rgba(1,61,35,0.78);margin-top:0.5rem;">
+        Cada artigo possui capa, tags e acesso ao conteúdo completo.
+      </p>
+    </div>
+
+    <!-- Grid de cards do blog -->
+    <div class="blog-grid">
+{{cards}}
+          </div><!-- /.blog-grid -->
+
+  </div><!-- /.container -->
 </main>
 
 ﻿<footer class="site-footer" role="contentinfo">

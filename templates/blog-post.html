@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Projetos Industriais e TRL | FMEA Engineering</title>
-  <meta name="description" content="TRL aplicado a projetos industriais com integração entre inspeção técnica, qualificação de materiais e validação em campo." />
+  <title>{{metaTitle}}</title>
+  <meta name="description" content="{{metaDescription}}" />
 
   
   <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
+  <meta property="og:type"        content="article" />
   <meta property="og:site_name"   content="FMEA Engineering" />
-  <meta property="og:title"       content="Projetos Industriais e TRL | FMEA Engineering" />
-  <meta property="og:description" content="TRL aplicado a projetos industriais com integração entre inspeção técnica, qualificação de materiais e validação em campo." />
-  <meta property="og:image"       content="/assets/images/hero-energia.png" />
+  <meta property="og:title"       content="{{metaTitle}}" />
+  <meta property="og:description" content="{{metaDescription}}" />
+  <meta property="og:image"       content="{{coverAbs}}" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
@@ -28,6 +28,7 @@
 
   <!-- CSS principal -->
   <link rel="stylesheet" href="/assets/css/main.css" />
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body data-page="blog">
 ﻿<header class="site-header" role="banner">
@@ -105,11 +106,7 @@
 </header>
 
 <div class="blog-post-hero">
-  <img
-    src="/assets/images/images/wind-farm-landscape.jpg"
-    alt="Planta industrial utilizada como referência para planejamento e maturidade de projetos"
-    loading="eager"
-  />
+  <img src="{{cover}}" alt="{{coverAlt}}" loading="eager" />
   <div class="img-overlay" aria-hidden="true"></div>
 </div>
 
@@ -119,55 +116,24 @@
 
       <div class="blog-post-meta">
         <a href="/blog" style="font-size:0.8125rem;color:rgba(1,61,35,0.65);">← Blog</a>
-        <time class="blog-post-date" datetime="2026-01-12">12/01/2026</time>
-        <span class="blog-post-reading">7 min de leitura</span>
+        <time class="blog-post-date" datetime="{{dateIso}}">{{dateBr}}</time>
+        <span class="blog-post-reading">{{readingTime}}</span>
       </div>
 
       <div style="display:flex;flex-wrap:wrap;gap:0.375rem;margin-bottom:1.25rem;">
-        <span class="tag tag-default">TRL</span>
-        <span class="tag tag-default">Desenvolvimento de projetos</span>
-        <span class="tag tag-default">Escala industrial</span>
+{{tagsHtml}}
       </div>
 
-      <h1>TRL aplicado ao desenvolvimento de projetos industriais</h1>
+      <h1>{{title}}</h1>
 
-      <p class="blog-post-excerpt">
-        Uso da escala TRL para reduzir incerteza técnica e acelerar a maturidade de soluções complexas.
-      </p>
+      <p class="blog-post-excerpt">{{excerpt}}</p>
 
       <div class="blog-content">
-
-        <h2>Por que usar TRL</h2>
-        <p>
-          A escala TRL organiza o avanço técnico da solução em etapas claras, reduzindo decisões por
-          percepção e melhorando priorização de investimento. Em projetos industriais, combinar TRL com
-          <a href="/servicos/inspecoes">inspeção técnica</a> evita que o desenvolvimento
-          avance sem leitura real da condição do ativo.
-        </p>
-
-        <h2>Aplicação prática por etapa</h2>
-        <ul>
-          <li>TRL 1 a 3: validação conceitual e prova de hipótese.</li>
-          <li>
-            TRL 4 a 6: protótipo funcional, caracterização de materiais e ensaios em ambiente relevante.
-          </li>
-          <li>TRL 7 a 9: validação em campo e consolidação operacional.</li>
-        </ul>
-
-        <h2>Benefícios para o negócio</h2>
-        <p>
-          Com marcos técnicos objetivos, o projeto evolui com menos retrabalho, melhor governança e maior
-          previsibilidade de prazo e custo. Quando surgem desvios durante a validação, integrar
-          <a href="/servicos/analise-de-falhas">análise de falha industrial</a> acelera
-          o retorno ao caminho técnico correto.
-        </p>
-
+{{content}}
       </div>
 
       <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(1,61,35,0.10);">
-        <p style="font-size:0.9375rem;color:rgba(1,61,35,0.78);margin-bottom:1rem;">
-          Quer estruturar seu projeto com metodologia TRL?
-        </p>
+        <p style="font-size:0.9375rem;color:rgba(1,61,35,0.78);margin-bottom:1rem;">{{ctaText}}</p>
         <a href="/contato" class="btn-primary">Fale com um especialista</a>
       </div>
 

@@ -1,0 +1,60 @@
+# Configuração do painel Pages CMS (https://pagescms.org)
+media:
+  input: assets/images/blog
+  output: /assets/images/blog
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: blog
+    label: Blog
+    type: collection
+    path: content/blog
+    filename: "{primary}.md"
+    view:
+      fields: [title, date, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: date
+        label: Data de publicação
+        type: date
+        required: true
+      - name: excerpt
+        label: Resumo (aparece no card do blog e abaixo do título)
+        type: text
+        required: true
+      - name: cover
+        label: Foto de capa
+        type: image
+        required: true
+      - name: coverAlt
+        label: Descrição da foto (acessibilidade e Google)
+        type: string
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: body
+        label: Texto do post
+        type: rich-text
+      - name: ctaText
+        label: Frase de chamada no fim do post
+        type: string
+        default: Precisa de apoio técnico? Fale com a nossa equipe.
+      - name: metaTitle
+        label: Título para o Google (opcional)
+        type: string
+      - name: metaDescription
+        label: Descrição para o Google (opcional, até 160 caracteres)
+        type: text
+      - name: draft
+        label: Rascunho (não publicar ainda)
+        type: boolean
+        default: false
