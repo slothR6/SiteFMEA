@@ -12,5 +12,5 @@ excerpt: Lorem Ipsum is simply dummy text of the printing and typesetting
   versions of Lorem Ipsum.
 cover: /assets/images/blog/LOGO (3).png
 ctaText: Precisa de apoio técnico? Fale com a nossa equipe.
-draft: true
+draft: false
 ---
