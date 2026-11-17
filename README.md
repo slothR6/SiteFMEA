@@ -10,3 +10,10 @@ Site estático (HTML/CSS/JS) hospedado na Vercel. Convertido do site PHP origina
 Qualquer alteração enviada para a branch `main` vai para o ar automaticamente. Pull requests geram um link de prévia.
 
 A versão anterior em Next.js/TypeScript está preservada na branch `nextjs-versao-anterior`.
+
+## Blog e painel (Pages CMS)
+
+- Os posts ficam em `content/blog/*.md` (um arquivo por post, com título, data, capa, tags etc. no topo).
+- O painel em https://app.pagescms.org edita esses arquivos (configuração em `.pages.yml`). Fotos enviadas vão para `assets/images/blog/`.
+- Na Vercel, `npm run build` roda `scripts/build-blog.mjs`, que gera `blog.html` e `blog/<post>.html` a partir dos modelos em `templates/`.
+- Marque "Rascunho" para salvar um post sem publicar.

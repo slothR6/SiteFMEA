@@ -1,0 +1,4 @@
+node_modules/
+# gerados no build a partir de content/blog
+/blog.html
+/blog/
