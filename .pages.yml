@@ -27,7 +27,7 @@ content:
         type: date
         required: true
       - name: excerpt
-        label: Resumo (aparece no card do blog e abaixo do título)
+        label: Resumo (1 ou 2 frases, até 180 caracteres; aparece no card do blog e abaixo do título)
         type: text
         required: true
       - name: cover

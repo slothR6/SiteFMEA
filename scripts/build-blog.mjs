@@ -29,6 +29,13 @@ function toIso(date) {
   if (br) return `${br[3]}-${br[2]}-${br[1]}`;
   return s.slice(0, 10);
 }
+// No card da listagem o resumo é cortado em ~180 caracteres para os cards ficarem alinhados
+function cardExcerpt(text) {
+  const t = String(text || "").trim();
+  if (t.length <= 180) return t;
+  return t.slice(0, 180).replace(/\s+\S*$/, "") + "…";
+}
+
 const toBr = (iso) => iso.split("-").reverse().join("/");
 
 function readingTime(text) {
@@ -102,7 +109,7 @@ const cards = posts
             <span>${p.readingTime}</span>
           </div>
           <h3><a href="/blog/${p.slug}">${esc(p.title)}</a></h3>
-          <p>${esc(p.excerpt)}</p>
+          <p>${esc(cardExcerpt(p.excerpt))}</p>
           <div class="blog-card-tags">
 ${p.tags.map((t) => `            <span class="tag tag-default">${esc(t)}</span>`).join("\n")}
           </div>
