@@ -13,7 +13,8 @@ const CONTACT_RATE_MAX_REQUESTS = 5;
 const CONTACT_MAIL_LOGS_COLLECTION = "mailLogs";
 const CONTACT_EMAIL_SUBJECT = "Novo contato t\u00e9cnico - FMEA";
 const CONTACT_DEV_FALLBACK_FROM = "FMEA <contato@fmea.net.br>";
-const CONTACT_FROM_ALLOWED_DOMAIN = "fmea.net.br";
+// Domínios verificados no Resend (fmeaengineering.com.br tem o registro resend._domainkey na Hostinger)
+const CONTACT_FROM_ALLOWED_DOMAINS = ["fmeaengineering.com.br", "fmea.net.br"];
 const CONTACT_SUCCESS_MESSAGE = "Solicita\u00e7\u00e3o enviada com sucesso. Nossa equipe t\u00e9cnica retornar\u00e1 em breve.";
 const CONTACT_FAILURE_MESSAGE = "N\u00e3o foi poss\u00edvel enviar agora. Tente novamente em instantes.";
 const SERVICE_UNAVAILABLE_MESSAGE = "Servi\u00e7o temporariamente indispon\u00edvel. Tente novamente em instantes.";
@@ -116,7 +117,7 @@ function resolveContactFrom(raw: string | undefined): string | null {
 
 function isAllowedFromDomain(fromValue: string): boolean {
   const fromEmail = extractEmailFromFromHeader(fromValue);
-  return fromEmail.endsWith(`@${CONTACT_FROM_ALLOWED_DOMAIN}`);
+  return CONTACT_FROM_ALLOWED_DOMAINS.some((domain) => fromEmail.toLowerCase().endsWith(`@${domain}`));
 }
 
 function extractErrorMessage(error: unknown): string {
@@ -327,7 +328,7 @@ export async function POST(request: Request) {
       });
     }
 
-    console.warn(`CONTACT_FROM_EMAIL is outside ${CONTACT_FROM_ALLOWED_DOMAIN}; continuing only in development.`);
+    console.warn(`CONTACT_FROM_EMAIL is outside ${CONTACT_FROM_ALLOWED_DOMAINS.join(", ")}; continuing only in development.`);
   }
 
   if (!getResendClient()) {
