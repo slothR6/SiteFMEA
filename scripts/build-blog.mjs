@@ -49,7 +49,8 @@ const posts = fs
       draft: data.draft === true,
       title: data.title,
       excerpt: data.excerpt || "",
-      cover: data.cover || "/assets/images/hero-energia.png",
+      // encodeURI: nomes de foto enviados pelo painel podem ter espaços e parênteses
+      cover: encodeURI(decodeURI(data.cover || "/assets/images/hero-energia.png")),
       coverAlt: data.coverAlt || data.title,
       tags: Array.isArray(data.tags) ? data.tags : [],
       metaTitle: data.metaTitle || `${data.title} | FMEA Engineering`,
